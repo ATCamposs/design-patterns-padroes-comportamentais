@@ -35,4 +35,15 @@ Aplicabilidade:
   - A gramática é simples. Para gramáticas complexas, a hierarquia de classes para a gramática se torna o grande e incontrolável. Em tais casos, ferramentas tais como geradores de analisadores são uma alternativa melhor. Elas podem interpretar expressões sem a construção de arvores sintáticas abstratas, oque pode economizar espaço, e, possivelmente, tempo.
   - A eficiência não é uma preocupação crítica. Os interpretadores mais eficientes normalmente são implementados pela interpretação direta de árvores de analise sintática, mas pela sua tradução para uma outra forma. Por exemplo, expressões regulares são frequentemente transformadas em máquinas de estado. Porém mesmo assim, o tradutor poderia ser interpretado pelo padrão interpreter, sendo o padrão ainda aplicado.
 
-  
+# Iterator
+
+Problema:
+
+Fornecer um meio de acessar, sequencialmente, os elementos de um objeto agregado sem expor sua representação subjacente.
+
+Aplicabilidade:
+
+ - Para acessar os conteudos de um objeto agregado sem expor a sua representação interna.
+ - Para suportar multiplos recursos de um objeto agregado.
+ - Para fornecer uma interface uniforme que percorra diferentes estruturas agregadas (ou seja, para suportar a iteração polimorfica).
+ 
