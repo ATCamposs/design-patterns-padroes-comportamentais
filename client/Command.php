@@ -12,7 +12,6 @@ function invoker(string $commandToExecute)
         TurnOnCommand::class,
         TurnOffCommand::class,
     ];
-
     $similar = 0;
     $finalCommand = null;
     foreach ($commands as $command) {
@@ -23,11 +22,9 @@ function invoker(string $commandToExecute)
             $finalCommand = $command;
         }
     }
-
     if (!$finalCommand) {
         throw new Exception("Command not found");
     }
-
     return (new $finalCommand(new LampReceiver()))->execute();
 }
 
