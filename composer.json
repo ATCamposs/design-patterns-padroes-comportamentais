@@ -1,0 +1,19 @@
+{
+    "name": "andre/design-patterns-padroes-comportamentais",
+    "description": "Exemplos de padroes comportamentais",
+    "require-dev": {
+        "symplify/coding-standard": "^8.3"
+    },
+    "authors": [
+        {
+            "name": "ATCamposs",
+            "email": "andre.tatibano@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src"
+        }
+    }
+}
