@@ -58,3 +58,12 @@ Aplucabilidade:
   - A reutilização de um objeto é dificil porque ele referencia e se comunica com muitos outros objetos.
   - Um comportamento que está distribuido entre várias classes deveria ser customizável, ou adaptável. sem excessiva especialização da subclasse.
 
+# Memento
+
+Problema:
+Sem violar o encapsulamento, capturar e externalizar um estado interno de um objeto, de maneira que o objeto possa ser restaurado para esse estado mais tarde.
+
+Aplicabilidade:
+ - Um instantâneo(porções do) estado de um objeto, devem ser alvo de maneira que possam ser restaurados para esse estadeo mais tarde.
+ - Uma interface direta para obtenção do estado exporia detalhes da implementação e romperia o encapsulamento do objeto.
+
