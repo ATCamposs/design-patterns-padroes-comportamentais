@@ -24,13 +24,13 @@ Aplicabilidade:
  - Especificar, enfileirar e executar solicitações em tempos diferentes. Um objeto Command pode ter um tempo de vida independente da solicitação original. Se o receptor de uma solicitação pode ser representado de uma maneira independente do espaço de endereçamento, então você pode transferir um objeto command para a solicitação para um processo diferente e lá atender a solicitação.
  - Suportar desfazer operações. A operação execute, de um Command pode armazenar estados para reverter seus efeitos no próprio command. A interface de Command deve ter uma operação Unexecute, que reverte os efeitos de uma chamada anterior de Execute. Os comandos executados são armazenados em uma lista histórica. O nível ilimitado de desfazer e refazer operações é obtido percorrendo esta lista para trás e para frente, chamando operações Unexecute e Execute respectivamente.
 
- # Interpreter
+# Interpreter
 
- Problema:
+Problema:
 
- Dada uma linguagem, definir uma representação para sua gramática juntamente com um interpretador que usa a representação para interpretar sentenças dessa linguagem.
+Dada uma linguagem, definir uma representação para sua gramática juntamente com um interpretador que usa a representação para interpretar sentenças dessa linguagem.
 
- Aplicabilidade:
+Aplicabilidade:
 
   - A gramática é simples. Para gramáticas complexas, a hierarquia de classes para a gramática se torna o grande e incontrolável. Em tais casos, ferramentas tais como geradores de analisadores são uma alternativa melhor. Elas podem interpretar expressões sem a construção de arvores sintáticas abstratas, oque pode economizar espaço, e, possivelmente, tempo.
   - A eficiência não é uma preocupação crítica. Os interpretadores mais eficientes normalmente são implementados pela interpretação direta de árvores de analise sintática, mas pela sua tradução para uma outra forma. Por exemplo, expressões regulares são frequentemente transformadas em máquinas de estado. Porém mesmo assim, o tradutor poderia ser interpretado pelo padrão interpreter, sendo o padrão ainda aplicado.
@@ -53,7 +53,7 @@ Problema:
 
 Definir um objeto que encapsula a forma como um conjunto de objetos interage. O mediator promove o acoplamento fraco ao evitar que os objetos refiram uns aos outros explicitamente e permite variar suas interações independentemente.
 
-Aplucabilidade:
+Aplicabilidade:
 
  - Um conjunto de objetos se comunica de maneiras bem definidas, porém complexas. As interdependências resultantes são desestruturadas e difíceis de entender.
   - A reutilização de um objeto é dificil porque ele referencia e se comunica com muitos outros objetos.
@@ -76,6 +76,7 @@ Problema:
 Definir uma dependencia "um-para-muitos" entre objetos, de uma maneira que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente.
 
 Aplicabilidade:
+
  - Quando uma abstração tem dois aspectos, um dependente do outro. Encapsular esses aspectos em objetos separados, permite-se variá-los e reutilizá-los independentemente;
  - Quando uma mudança em um objeto exige mudanças em outros, e você não sabe quantos objetos necessitam ser mudados.
  - Quando um objeto deveria ser capaz de notificar outros objetos sem fazer hipóteses, ou usar informações sobre quem são esses objetos. Em outras palavras, você não quer que esses objetos sejam fortemente acoplados.
@@ -99,8 +100,18 @@ Definir uma familia de algoritmos, encapsular cada uma delas e torna-las interca
 
 Aplicabilidade:
 
- - Muitas classes relacionadas diferem somente no seu comportamento. As estratégias fornecem uma maneira de configurar uma classe com um dentre muitos comportamentos.
+  - Muitas classes relacionadas diferem somente no seu comportamento. As estratégias fornecem uma maneira de configurar uma classe com um dentre muitos comportamentos.
   - Você necessita de variantes de um algoritmo. Por exemplo, pode definir algoritmos que refletem diferentes soluções de compromisso entre espaço/tempo. As estratégias podem ser usadas quando essas variantes são implementadas como uma hierarquia de classes de algoritmos.
   - Um algoritmo usa dados dos quais os clientes não deveriam ter conhecimento. Use o padrão Strategy para evitar a exposição de estruturas de dados complexas, específicas do algoritmo;
   - Uma classe define muitos comportamentos, e estes aparecem em suas operações como multiplos comandos condicionais da linguagem. Em vez de usar muitos comandos condicionais, mova os ramos condicionais relacionados para sua própria classe Strategy.
-  
+
+# Template
+
+Problema:
+Definir o esqueleto de um algoritmo em uma operação, postergando alguns passos para as subclasses. Template Method permite que subclasses redefinam certos passos de um algoritmo sem mudar a estrutura do mesmo.
+
+Aplicaçao:
+
+ - Para implementar as partes invariantes de um algoritmo uma só vez e deiar para as subclasses a implementação do comportamentoque pode variar.
+ - Quando o comportamento comum entre subclasses deve ser fatorado e concentrado numa classe comum para evitar duplicação de código. Este é um bom exemplo de "refatorar para generalizar", conforme descrito por Opdyke e Johnson. Primeiramente, você identifica as diferenças no código existente e então separa as diferenças em novas operações. Por fim, você substitui o código que apresentava as diferenças por um método-template que chama uma dessas novas operações.
+ - Para controlar extensões de subclasses. Você pode definir um metodo-template que chama operações "gancho" em pontos específicos, desta forma permitindo extensões somente nesses pontos.
