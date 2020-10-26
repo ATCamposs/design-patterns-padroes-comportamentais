@@ -91,3 +91,16 @@ Aplicabilidade:
  - O comportamento de um objeto depende do estado e ele pode mudar o seu comportamento em tempo de execução dependendo desse estado.
  - Operações tem comandos condicionais grantes, de várias alternativas, que dependem do estado do objeto. Esse estado é normalmente representado por uma ou mais constantes enumeradas. Frequentemente, várias operações conterão essa mesma estrutura condicional. O padrão State coloca cada ramo do comando adicional em uma classe separada. Isso permite tratar o estado do objeto propriamente dito, que pode variar independente de outros objetos.
  
+# Strategy
+
+Problema:
+
+Definir uma familia de algoritmos, encapsular cada uma delas e torna-las intercambiáveis. O Strategy permite que o algoritmo varia independentemente dos clientes que o utilizam.
+
+Aplicabilidade:
+
+ - Muitas classes relacionadas diferem somente no seu comportamento. As estratégias fornecem uma maneira de configurar uma classe com um dentre muitos comportamentos.
+  - Você necessita de variantes de um algoritmo. Por exemplo, pode definir algoritmos que refletem diferentes soluções de compromisso entre espaço/tempo. As estratégias podem ser usadas quando essas variantes são implementadas como uma hierarquia de classes de algoritmos.
+  - Um algoritmo usa dados dos quais os clientes não deveriam ter conhecimento. Use o padrão Strategy para evitar a exposição de estruturas de dados complexas, específicas do algoritmo;
+  - Uma classe define muitos comportamentos, e estes aparecem em suas operações como multiplos comandos condicionais da linguagem. Em vez de usar muitos comandos condicionais, mova os ramos condicionais relacionados para sua própria classe Strategy.
+  
