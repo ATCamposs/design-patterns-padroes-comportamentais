@@ -108,10 +108,23 @@ Aplicabilidade:
 # Template
 
 Problema:
+
 Definir o esqueleto de um algoritmo em uma operação, postergando alguns passos para as subclasses. Template Method permite que subclasses redefinam certos passos de um algoritmo sem mudar a estrutura do mesmo.
 
-Aplicaçao:
+Aplicabilidade:
 
  - Para implementar as partes invariantes de um algoritmo uma só vez e deiar para as subclasses a implementação do comportamentoque pode variar.
  - Quando o comportamento comum entre subclasses deve ser fatorado e concentrado numa classe comum para evitar duplicação de código. Este é um bom exemplo de "refatorar para generalizar", conforme descrito por Opdyke e Johnson. Primeiramente, você identifica as diferenças no código existente e então separa as diferenças em novas operações. Por fim, você substitui o código que apresentava as diferenças por um método-template que chama uma dessas novas operações.
  - Para controlar extensões de subclasses. Você pode definir um metodo-template que chama operações "gancho" em pontos específicos, desta forma permitindo extensões somente nesses pontos.
+
+# Visitor
+
+Problema:
+
+Representar uma operação a ser executada nos elementos de uma estrutura de objetos. O Visitor permite definir uma nova operação sem mudar as classes dos elementos sobre os quais opera.
+
+Aplicabilidade:
+
+ - Uma estrutura de objetos contém muitas classes de objetos com interfaces que diferem e você deseja executar operações sobre esses objetos que dependem das suas classes concretas.
+ - Muitas operações distintas e não-relacionadas necessitam ser executadas sobre obejtos de uma estrutura de objetos, e você deseja evitar a "poluição" das suas classes com operações. Visitor permite manter juntas operações relacionadas, definindo-as em uma classe única. Quando a estrutura do objeto for compartilhada por muitas aplicações, use o Visitor para as operações somente naquelas aplicações que as necessitam.
+ - As classes que definem a estrutura do objeto raramente mudam, porém você frequentemente deseja definir novas operações sobre a estrutura. A mudança das classes da estrutura do objeto requer a redefinição da interface para todos os visitantes, oque é potencialmente oneroso. Se as classes da estrutura do objeto mudam com frequencia, provavelmente é melhor definir as operações nessa classe.
