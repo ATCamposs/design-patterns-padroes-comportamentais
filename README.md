@@ -47,3 +47,14 @@ Aplicabilidade:
  - Para suportar multiplos recursos de um objeto agregado.
  - Para fornecer uma interface uniforme que percorra diferentes estruturas agregadas (ou seja, para suportar a iteração polimorfica).
  
+# Mediator
+
+Problema:
+Definir um objeto que encapsula a forma como um conjunto de objetos interage. O mediator promove o acoplamento fraco ao evitar que os objetos refiram uns aos outros explicitamente e permite variar suas interações independentemente.
+
+Aplucabilidade:
+
+ - Um conjunto de objetos se comunica de maneiras bem definidas, porém complexas. As interdependências resultantes são desestruturadas e difíceis de entender.
+  - A reutilização de um objeto é dificil porque ele referencia e se comunica com muitos outros objetos.
+  - Um comportamento que está distribuido entre várias classes deveria ser customizável, ou adaptável. sem excessiva especialização da subclasse.
+
