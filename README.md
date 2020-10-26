@@ -50,6 +50,7 @@ Aplicabilidade:
 # Mediator
 
 Problema:
+
 Definir um objeto que encapsula a forma como um conjunto de objetos interage. O mediator promove o acoplamento fraco ao evitar que os objetos refiram uns aos outros explicitamente e permite variar suas interações independentemente.
 
 Aplucabilidade:
@@ -61,6 +62,7 @@ Aplucabilidade:
 # Memento
 
 Problema:
+
 Sem violar o encapsulamento, capturar e externalizar um estado interno de um objeto, de maneira que o objeto possa ser restaurado para esse estado mais tarde.
 
 Aplicabilidade:
@@ -70,6 +72,7 @@ Aplicabilidade:
 # Observer
 
 Problema:
+
 Definir uma dependencia "um-para-muitos" entre objetos, de uma maneira que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente.
 
 Aplicabilidade:
@@ -77,3 +80,14 @@ Aplicabilidade:
  - Quando uma mudança em um objeto exige mudanças em outros, e você não sabe quantos objetos necessitam ser mudados.
  - Quando um objeto deveria ser capaz de notificar outros objetos sem fazer hipóteses, ou usar informações sobre quem são esses objetos. Em outras palavras, você não quer que esses objetos sejam fortemente acoplados.
 
+# State
+
+Problema:
+
+Permite a um objeto alterar seu comportamento quando o seu estado interno muda. O objeto parecerá ter mudado sua classe.
+
+Aplicabilidade:
+
+ - O comportamento de um objeto depende do estado e ele pode mudar o seu comportamento em tempo de execução dependendo desse estado.
+ - Operações tem comandos condicionais grantes, de várias alternativas, que dependem do estado do objeto. Esse estado é normalmente representado por uma ou mais constantes enumeradas. Frequentemente, várias operações conterão essa mesma estrutura condicional. O padrão State coloca cada ramo do comando adicional em uma classe separada. Isso permite tratar o estado do objeto propriamente dito, que pode variar independente de outros objetos.
+ 
